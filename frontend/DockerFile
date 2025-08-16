@@ -9,8 +9,16 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy frontend code
 COPY . .
 
-# Expose Streamlit port
-EXPOSE 8501
+# Create streamlit config directory and file
+RUN mkdir -p ~/.streamlit && \
+    echo "[server]" > ~/.streamlit/config.toml && \
+    echo "headless = true" >> ~/.streamlit/config.toml && \
+    echo "enableCORS = false" >> ~/.streamlit/config.toml && \
+    echo "enableXsrfProtection = false" >> ~/.streamlit/config.toml && \
+    echo "address = \"0.0.0.0\"" >> ~/.streamlit/config.toml
 
-# Run Streamlit
-CMD ["streamlit", "run", "app.py", "--server.port=8501", "--server.address=0.0.0.0", "--server.headless=true"]
+# Expose port (Render will set PORT env var)
+EXPOSE $PORT
+
+# Run Streamlit with environment port
+CMD ["sh", "-c", "streamlit run app.py --server.port=$PORT --server.address=0.0.0.0 --server.headless=true"]

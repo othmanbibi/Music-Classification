@@ -96,4 +96,15 @@ def predict():
 
 
 if __name__ == "__main__":
-    app.run(host='127.0.0.1', port=5000, debug=True)
+    # Get port from environment variable (Render sets this)
+    port = int(os.environ.get('PORT', 5000))
+    
+    print(f"Starting Flask app on port {port}")
+    
+    # Run with host 0.0.0.0 to accept external connections
+    app.run(
+        host='0.0.0.0',
+        port=port,
+        debug=False,  # Disable debug in production
+        threaded=True  # Enable threading for better performance
+    )
