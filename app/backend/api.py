@@ -61,6 +61,14 @@ def model_predict_genre(test_audio_data):
 
 
 
+
+@app.route("/health", methods=["GET"])
+def health_check():
+    return jsonify({
+        "status": "ok",
+        "model_status": "loaded"
+    })
+
 @app.route("/predict", methods=["POST"])
 def predict():
     if "file" not in request.files:
@@ -96,15 +104,4 @@ def predict():
 
 
 if __name__ == "__main__":
-    # Get port from environment variable (Render sets this)
-    port = int(os.environ.get('PORT', 5000))
-    
-    print(f"Starting Flask app on port {port}")
-    
-    # Run with host 0.0.0.0 to accept external connections
-    app.run(
-        host='0.0.0.0',
-        port=port,
-        debug=False,  # Disable debug in production
-        threaded=True  # Enable threading for better performance
-    )
+    app.run(host='0.0.0.0', debug=False, threaded=True )
