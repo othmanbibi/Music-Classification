@@ -61,7 +61,7 @@ def model_predict_genre(test_audio_data):
 
 
 
-
+#Check if the server is working
 @app.route("/health", methods=["GET"])
 def health_check():
     return jsonify({
@@ -69,6 +69,7 @@ def health_check():
         "model_status": "loaded"
     })
 
+#Get Predictions
 @app.route("/predict", methods=["POST"])
 def predict():
     if "file" not in request.files:
@@ -104,4 +105,4 @@ def predict():
 
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', debug=False, threaded=True )
+    app.run(host='0.0.0.0', debug=True, threaded=True )

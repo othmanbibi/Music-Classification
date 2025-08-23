@@ -1,1 +1,5 @@
 notebooks/.ipynb_checkpoints/ 
+app/backend/templates/
+app/backend/test.py
+app/backend/test2.py
+
