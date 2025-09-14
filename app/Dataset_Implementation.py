@@ -52,3 +52,5 @@ if __name__ == "__main__":
         first_row_meta = {k: v[0] for k, v in meta.items()}
         print("Metadata for first sample:", first_row_meta)
         break
+
+# We can add the model
