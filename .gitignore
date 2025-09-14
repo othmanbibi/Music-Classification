@@ -2,4 +2,10 @@ notebooks/.ipynb_checkpoints/
 app/backend/templates/
 app/backend/test.py
 app/backend/test2.py
+<<<<<<< HEAD
 
+=======
+data/midi/metal/processed/
+data/midi/metal/raw/
+data/midi/metal/raw_all/
+>>>>>>> master
