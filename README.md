@@ -65,9 +65,9 @@ music-ml-app/
 
 ## 📹 Demo
 
-```markdown
-[![Watch the demo](https://img.youtube.com/vi/your_video_id/0.jpg)](https://youtu.be/your_video_id)
-```
+[![Demo Video](assets/pic-demo.png)](assets/website_demo.mp4)
+
+
 
 ---
 
