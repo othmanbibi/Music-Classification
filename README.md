@@ -64,8 +64,8 @@ music-ml-app/
 ---
 
 ## 📹 Demo
-
-[![Demo Video](assets/pic-demo.png)](assets/website_demo.mp4)
+👉 Click below to watch the demo of the website in action:
+[![Demo Video](assets/pic-demo.png)](https://youtu.be/AJMmz48ZwtQ)
 
 
 
